@@ -1,0 +1,13 @@
+<span style="color:red;font-weight: bold;font-size:40px"><%=  @genre_name%></span> <span style="color:red;font-size:40px">(<%=@games_by_genre.size%>)</span>
+
+<div id="games" class="game_container" style="margin-left:5px">
+			<% @games_by_genre.each do |game|%>
+
+	<div class="item" >
+<%=  link_to (image_tag game.image,width:249,height:250),game%>
+<h5 class="text-center"><%= link_to game.name , game , class:'game-link'%></h5>
+	</div>
+<%end%>
+
+
+</div>

@@ -1,0 +1,25 @@
+
+ @import 'bootstrap';
+ @import 'games.scss';
+
+
+ 
+.game-link{
+	color:red;
+}
+.game_container{
+	  display: grid;
+grid-template-columns: repeat(5,1fr);
+grid-column-gap:20px;
+grid-row-gap:10px;
+
+}
+
+.game_container>.item:hover{
+	border:2px solid red;
+}
+
+.game-link:hover{
+	color:red;
+}
+

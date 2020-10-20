@@ -1,0 +1,40 @@
+<div class="row">
+<div class="col text-center">
+		<div><%=image_tag @game.image ,class:'game-image'%></div>
+			<div><h3>[<%=@game.rating%>/10]<h3></div>
+				<div id="like-count">
+			<h5 ><%= render 'games/likes',game:@game%></h5>
+		</div>
+		<div id="like-link">
+			<h4><%= render 'games/like_link',game:@game%></h4>
+		</div>
+<div>
+	<span>Tags :</span>
+	<% @game.genres.each do |genre|%>
+          	<span style="border:01px solid red">
+               <%= link_to genre.name , root_path(genre: genre.name)%> 
+                </span>&nbsp 
+          	<%end%>
+          
+
+</div>
+
+</div>
+
+<div class="col-md-6">
+	<h1><%= @game.name%></h1>
+		
+		
+		<div><%= @game.review%></div>
+
+		<div class="fb-comments" data-href="https://developers.facebook.com/docs/plugins/comments#configurator" data-numposts="5" data-width=""></div>
+          
+	</div>
+<div class="col">
+	<% if current_user&.admin==true%>
+	<%= link_to 'Edit',edit_game_path(@game)%> <br>
+    <%= link_to 'delete',game_path(@game),method: :delet,:data => {:confirm => 'Are you sure?'}%>
+
+	<%end%>
+</div>
+</div>

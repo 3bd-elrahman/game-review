@@ -1,0 +1,3 @@
+<% like_text= current_user&.voted_for?(game) ? 'unlike':'like'%>
+
+<%= link_to like_text,like_game_path(game),method: :put,remote: true%>
